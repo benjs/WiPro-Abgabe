@@ -81,7 +81,12 @@ std::ostream &operator<<(std::ostream &os, MyQuaternion const &m) {
 }
 
 MyQuaternion MyQuaternion::sortAscending() const {
-    auto e_new = this->e;
+    std::array<double, 4> e_new {std::abs(this->e[0]), std::abs(this->e[1]), std::abs(this->e[2]), std::abs(this->e[3])};
     std::sort(e_new.begin(), e_new.end());
+    
     return MyQuaternion(e_new[0], e_new[1], e_new[2], e_new[3]);
+}
+
+double MyQuaternion::norm() const {
+    return this->e[0]*this->e[0] + this->e[1]*this->e[1] + this->e[2]*this->e[2] + this->e[3]*this->e[3];
 }

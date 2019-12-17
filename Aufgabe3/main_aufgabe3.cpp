@@ -44,7 +44,7 @@ int main(){
 	for(int i = 0; i < QL.size(); i++) {
 		// Mit int j=i+1 wird verhindert dass zweimal die gleichen Elemente verglichen werden
 		for (int j = i+1; j < QL.size(); j++) {
-			misorientations.emplace_back(get_theta(QL[i]*QL[j]));
+			misorientations.emplace_back(get_theta(QL[i]*QL[j].conj()));
 		}
 	}
 
@@ -62,7 +62,7 @@ int main(){
 	for(int i = 0; i < QL.size(); i++) {
 		// Mit int j=i+1 wird verhindert dass zweimal die gleichen Elemente verglichen werden
 		for (int j = i+1; j < QL.size(); j++) {
-			misorientations_sym.emplace_back(get_theta_cubic(QL[i]*QL[j]));
+			misorientations_sym.emplace_back(get_theta_cubic(QL[i]*QL[j].conj()));
 		}
 	}
 
@@ -71,6 +71,10 @@ int main(){
 	auto hist_sym = getNormalizedHist(misorientations_sym);
 	saveData("Aufgabe3/hist_cube.dat", hist_sym);
 
+	double sum = 0;
+	for (auto &el : hist_sym) {
+		sum += el.second;
+	}
 
 	std::cout<<"DONE"<<std::endl;
 

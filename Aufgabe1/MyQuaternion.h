@@ -34,6 +34,7 @@ class MyQuaternion {
         friend std::ostream &operator<<(std::ostream &os, MyQuaternion const &m);
 
         MyQuaternion sortAscending() const;
+        double norm() const;
 };
 
 

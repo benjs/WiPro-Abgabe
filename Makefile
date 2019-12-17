@@ -2,7 +2,7 @@ BUILDDIR = build
 INC=-I${CURDIR}/Aufgabe1/ -I${CURDIR}/Aufgabe2/ -I${CURDIR}/Aufgabe3/
 
 CXX=g++
-CXXFLAGS=-std=c++11 
+CXXFLAGS=-std=c++11
 
 LDFLAGS=-lgtest -lgtest_main -lpthread -L/usr/lib
 
@@ -21,7 +21,7 @@ a2: Aufgabe2/main_aufgabe2.cpp $(BUILDDIR)/MyQuaternion.o $(BUILDDIR)/MyFunction
 
 a3: Aufgabe3/main_aufgabe3.cpp Aufgabe3/quarternion_functions.h $(BUILDDIR)/MyQuaternion.o $(BUILDDIR)/MyFunctions.o
 	@echo "Building third excercise."
-	@$(CXX) -o $(BUILDDIR)/$@ $^ $(INC)
+	@$(CXX) -o $(BUILDDIR)/$@ $^ $(INC) -g
 
 test: Tests/test_main.cpp Tests/test_quaternion.cpp Tests/test_myfunctions.cpp Tests/test_aufgabe3.cpp $(BUILDDIR)/MyQuaternion.o $(BUILDDIR)/MyFunctions.o
 	@echo "Building tests."

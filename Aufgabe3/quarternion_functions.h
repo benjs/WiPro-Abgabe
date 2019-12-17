@@ -68,9 +68,9 @@ double get_theta_cubic(const MyQuaternion &Q){
 		Q1[2] - Q1[3] - Q1[0] + Q1[1],
 		Q1[0] + Q1[1] + Q1[3] + Q1[2]
 	};
-	Q3 = Q3 * (1/sqrt(2));
+	Q3 = Q3 * (1/sqrt(4));
 
-	std::array<double, 3> angles {get_theta(Q1*Q2), get_theta(Q1*Q3), get_theta(Q2*Q3)};
+	std::array<double, 3> angles {get_theta(Q1), get_theta(Q2), get_theta(Q3)};	
 	return *std::min_element(angles.begin(), angles.end());
 }
 
