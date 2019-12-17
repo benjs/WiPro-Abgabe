@@ -56,6 +56,7 @@ void random_vec4d(Vec4d &Q){
 // Aufgabe 3.2.A:
 double get_theta(const MyQuaternion &Q){
 	// einfügen..
+	return 2*acos(Q[3])*180/M_PI;
 
 }
 
