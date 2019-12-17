@@ -1,7 +1,7 @@
 #include "MyQuaternion.h"
 
 MyQuaternion::MyQuaternion() {
-    this[0] = this[1] = this[2] = this[3] = 0;
+    this->e[0] = this->e[1] = this->e[2] = this->e[3] = 0;
 }
 
 MyQuaternion::MyQuaternion(const MyQuaternion &Q) {
@@ -31,7 +31,7 @@ double& MyQuaternion::operator[](int i) {
 }
 
 const double& MyQuaternion::operator[](int i) const {
-    return (*this)[i];
+    return this->e.at(i);
 }
 
 MyQuaternion& MyQuaternion::operator= (const MyQuaternion &rhs) {
@@ -52,10 +52,10 @@ MyQuaternion MyQuaternion::conj() const {
 }
 
 MyQuaternion MyQuaternion::operator* (const MyQuaternion &Q) {
-    auto &a = this->e;
-    auto &b = Q.e;
+    const std::array<double, 4> &a = this->e;
+    const std::array<double, 4> &b = Q.e;
 
-    auto ret = MyQuaternion();
+    MyQuaternion ret = {0, 0, 0, 0};
 
     ret[0] = a[0]*b[3] + a[3]*b[0] - a[1]*b[2] + a[2]*b[1];
     ret[1] = a[1]*b[3] + a[3]*b[1] - a[2]*b[0] + a[0]*b[2];
@@ -68,3 +68,15 @@ MyQuaternion MyQuaternion::operator* (double scale) {
     return MyQuaternion(scale*this->e[0], scale*this->e[1], scale*this->e[2], scale*this->e[3]);
 }
 
+bool operator==(const MyQuaternion &lhs, const MyQuaternion &rhs) {
+    return lhs.e == rhs.e;
+}
+
+bool operator!=(const MyQuaternion &lhs, const MyQuaternion &rhs) {
+    return !(lhs == rhs);
+}
+
+// Überladung vom << operator 
+std::ostream &operator<<(std::ostream &os, MyQuaternion const &m) {
+    return os << "{" << m[0] << ", " << m[1] << ", " << m[2] << ", " << m[3] << "}";
+}

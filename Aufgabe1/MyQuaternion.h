@@ -2,6 +2,7 @@
 #define MY_QUATERNION
 
 #include <array>
+#include <iostream>
 
 class MyQuaternion {
     private:
@@ -23,6 +24,15 @@ class MyQuaternion {
 
         MyQuaternion operator* (const MyQuaternion &Q);
         MyQuaternion operator* (double scale);
+
+        // Damit man MyQuaternion vergleichen kann
+        friend bool operator==(const MyQuaternion &lhs, const MyQuaternion &rhs);
+        friend bool operator!=(const MyQuaternion &lhs, const MyQuaternion &rhs);
+
+        // Damit man MyQuaternion mit cout benutzen kann
+        friend std::ostream &operator<<(std::ostream &os, MyQuaternion const &m);
 };
+
+
 
 #endif
