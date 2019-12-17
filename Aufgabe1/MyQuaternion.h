@@ -3,6 +3,7 @@
 
 #include <array>
 #include <iostream>
+#include <algorithm>
 
 class MyQuaternion {
     private:
@@ -31,6 +32,8 @@ class MyQuaternion {
 
         // Damit man MyQuaternion mit cout benutzen kann
         friend std::ostream &operator<<(std::ostream &os, MyQuaternion const &m);
+
+        MyQuaternion sortAscending() const;
 };
 
 

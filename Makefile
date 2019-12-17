@@ -1,5 +1,5 @@
 BUILDDIR = build
-INC=-I${CURDIR}/Aufgabe1/ -I${CURDIR}/Aufgabe2/
+INC=-I${CURDIR}/Aufgabe1/ -I${CURDIR}/Aufgabe2/ -I${CURDIR}/Aufgabe3/
 
 CXX=g++
 CXXFLAGS=-std=c++11 
@@ -19,7 +19,7 @@ a2: Aufgabe2/main_aufgabe2.cpp $(BUILDDIR)/MyQuaternion.o $(BUILDDIR)/MyFunction
 	@echo "Building second excercise."
 	@$(CXX) -o $(BUILDDIR)/$@ $^ $(INC)
 
-a3: Aufgabe3/main_aufgabe3.cpp $(BUILDDIR)/MyQuaternion.o $(BUILDDIR)/MyFunctions.o
+a3: Aufgabe3/main_aufgabe3.cpp Aufgabe3/quarternion_functions.h $(BUILDDIR)/MyQuaternion.o $(BUILDDIR)/MyFunctions.o
 	@echo "Building third excercise."
 	@$(CXX) -o $(BUILDDIR)/$@ $^ $(INC)
 

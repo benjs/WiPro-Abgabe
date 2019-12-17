@@ -79,3 +79,9 @@ bool operator!=(const MyQuaternion &lhs, const MyQuaternion &rhs) {
 std::ostream &operator<<(std::ostream &os, MyQuaternion const &m) {
     return os << "{" << m[0] << ", " << m[1] << ", " << m[2] << ", " << m[3] << "}";
 }
+
+MyQuaternion MyQuaternion::sortAscending() const {
+    auto e_new = this->e;
+    std::sort(e_new.begin(), e_new.end());
+    return MyQuaternion(e_new[0], e_new[1], e_new[2], e_new[3]);
+}
