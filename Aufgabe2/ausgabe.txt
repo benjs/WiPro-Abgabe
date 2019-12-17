@@ -1,0 +1,47 @@
+Input1:
+======
+
+Ortsvektor eingeben:1
+0
+0
+Rotation: Achsenrichtung (wird normiert)
+0
+1
+0
+Winkel [Grad]
+180
+Quaternion X=(1,0,0,0)
+QR=(0,1,0,6.12323e-17)
+XP=(-1,0,1.22465e-16,0)
+
+Input2:
+======
+
+Ortsvektor eingeben:1
+0
+0
+Rotation: Achsenrichtung (wird normiert)
+1
+1
+1
+Winkel [Grad]
+120
+Quaternion X=(1,0,0,0)
+QR=(0.866025,0.866025,0.866025,0.5)
+XP=(-0.5,0.633975,2.36603,0)
+
+Input3:
+======
+
+Ortsvektor eingeben:1
+0
+0
+Rotation: Achsenrichtung (wird normiert)
+0
+0
+1
+Winkel [Grad]
+90
+Quaternion X=(1,0,0,0)
+QR=(0,0,0.707107,0.707107)
+XP=(2.22045e-16,-1,0,0)

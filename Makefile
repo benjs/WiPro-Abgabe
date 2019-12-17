@@ -23,7 +23,7 @@ a3: Aufgabe3/main_aufgabe3.cpp $(BUILDDIR)/MyQuaternion.o $(BUILDDIR)/MyFunction
 	@echo "Building third excercise."
 	@$(CXX) -o $(BUILDDIR)/$@ $^ $(INC)
 
-test: Tests/test_main.cpp Tests/test_quaternion.cpp $(BUILDDIR)/MyQuaternion.o $(BUILDDIR)/MyFunctions.o
+test: Tests/test_main.cpp Tests/test_quaternion.cpp Tests/test_myfunctions.cpp $(BUILDDIR)/MyQuaternion.o $(BUILDDIR)/MyFunctions.o
 	@echo "Building tests."
 	@$(CXX) -o $(BUILDDIR)/$@ $^ $(INC) $(LDFLAGS)
 

@@ -6,7 +6,7 @@ class MyFunctionsTest : public ::testing::Test {
         MyQuaternion Q {0, 1, 0, 0};
         MyQuaternion X {2, 0, 0, 0};
 
-        MyQuaternion XrotatedByQ {-2, 0, 0, 0}
+        MyQuaternion XrotatedByQ {-2, 0, 0, 0};
 };
 
 TEST_F(MyFunctionsTest, Sample) {

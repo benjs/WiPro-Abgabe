@@ -1,0 +1,20 @@
+Ausgabe Aufgabe 1: zu kopierender Abschnitt beginnt
+
+QA=(1,2,3,4)
+
+QB=QA+QA.conj()     =(0,0,0,8)
+
+QB=(QA-QA.conj())*2.=(4,8,12,0)
+
+QC=(5,10,15,4)
+QC=QA*QB= (16,32,48,-56)
+
+QC rand = (0.840188,0.394383,0.783099,0.79844)
+
+Information in Funktion: Komponenten von Q 
+0.840188 0.394383 0.783099 0.79844 
+-------------------------------------------
+Information in Funktion: Komponenten von Q 
+0 0 0 1 
+-------------------------------------------
+Ende des Ergebnisteils ==============
