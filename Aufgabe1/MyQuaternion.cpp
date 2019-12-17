@@ -1,7 +1,9 @@
 #include "MyQuaternion.h"
 
 MyQuaternion::MyQuaternion() {
-    this->e[0] = this->e[1] = this->e[2] = this->e[3] = 0;
+    for (int i = 0; i < 4; i++) {
+        this->e[i] = 0;
+    }
 }
 
 MyQuaternion::MyQuaternion(const MyQuaternion &Q) {
@@ -35,10 +37,7 @@ const double& MyQuaternion::operator[](int i) const {
 }
 
 MyQuaternion& MyQuaternion::operator= (const MyQuaternion &rhs) {
-    if(&rhs != this) {
-        *this = MyQuaternion(rhs);
-    }
-
+    this->e = rhs.e;
     return *this;
 }
 
